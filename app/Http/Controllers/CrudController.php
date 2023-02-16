@@ -6,6 +6,7 @@ use App\Models\Crud;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class CrudController extends Controller
 {
@@ -37,6 +38,7 @@ class CrudController extends Controller
         ]);
 
         if ($validated) {
+            Artisan::call("make:model {$request->input('model_name')} -cm --resource");
             Crud::create($request->all());
         }
         return redirect()->route('crud.index');

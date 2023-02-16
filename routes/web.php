@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudController;
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Models\Crud;
 
 // CRUD Controller
 Route::resource('crud', CrudController::class);
+
+foreach(Crud::all() as $crud) {
+    Route::resource($crud->table, $crud->controller."::class");
+}
 
