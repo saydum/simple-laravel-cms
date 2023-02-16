@@ -1,4 +1,4 @@
-Здесь создавать модули
+Здесь помешаться модули
 [docs](https://docs.laravelmodules.com/v10/introduction)
 
 Например:
