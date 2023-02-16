@@ -44,6 +44,12 @@ return [
             'throw' => false,
         ],
 
+        'views' => [
+            'driver' => 'local',
+            'root' => storage_path('app/views/cruds'),
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

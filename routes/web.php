@@ -8,6 +8,6 @@ use App\Models\Crud;
 Route::resource('crud', CrudController::class);
 
 foreach(Crud::all() as $crud) {
-    Route::resource(strtolower($crud->model_name), $crud->controller."::class");
+    Route::resource($crud->model, $crud->controller."::class");
 }
 

@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 
 class CrudController extends Controller
 {
@@ -39,6 +40,9 @@ class CrudController extends Controller
 
         if ($validated) {
             Artisan::call("make:model {$request->input('model_name')} -cm --resource");
+            // Storage::disk('views')->makeDirectory($request->input('table'));
+            // File::makeDirectory(base_path()."/resources/views/cruds{$request->input('table')}");
+            Storage::disk('local')->put('example.txt', 'Contents');
             Crud::create($request->all());
         }
         return redirect()->route('crud.index');
