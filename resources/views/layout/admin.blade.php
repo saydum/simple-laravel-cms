@@ -1,21 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin panel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                @yield('content')
-            </div>
-        </div>
-    </div>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+@include('layout._embed.head')
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        @include('layout._embed.sidebar')
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                @include('layout._embed.topbar')
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    @include('layout._embed.header')
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        @yield('content')
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+
+    <!-- Footer -->
+    @include('layout._embed.footer')
+    <!-- End of Footer -->
+
+    <!-- Scroll to Top Button-->
+    @include('layout._embed.scroll')
+
+    <!-- Logout Modal-->
+    @include('layout._embed.logout-modal')
+
+    <!-- JS scriptis -->
+    @include('layout._embed.js-scripts')
+
 </body>
 </html>
