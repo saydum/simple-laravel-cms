@@ -1,7 +1,9 @@
 @extends('layout.admin')
 
 @section('content')
-
+<div class="mb-3">
+    <a href="{{ route('crud.create') }}" class="btn btn-success" type="submit">Создать страницу</a>
+</div>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -13,7 +15,7 @@
     </thead>
     <tbody>
 
-        @foreach ($cruds as $c)
+        @foreach ($pages as $c)
         <tr>
             <th scope="row">{{ $c->id }}</th>
             <td>{{ $c->model_name }}</td>

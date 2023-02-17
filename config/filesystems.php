@@ -46,7 +46,7 @@ return [
 
         'views' => [
             'driver' => 'local',
-            'root' => storage_path('app/views/cruds'),
+            'root' => storage_path('app/views/pages'),
             'throw' => false,
         ],
 
