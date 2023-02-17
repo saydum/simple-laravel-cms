@@ -8,6 +8,7 @@ use App\Models\Crud;
 
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/pages', [DashboardController::class, 'pages'])->name('pages');
 
 // CRUD Controller
 Route::resource('crud', CrudController::class);
