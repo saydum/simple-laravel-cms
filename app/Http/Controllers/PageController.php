@@ -48,6 +48,8 @@ class PageController extends Controller
                 $module = Module::find($request->input('module_id'));
                 Artisan::call("module:make-model {$request->input('model_name')} {$module->name} -m");
                 Artisan::call("module:make-controller {$request->input('model_name')}Controller {$module->name} --api");
+
+                // $request->input('model_name')}/Resources/views/index.blade.php
             }
 
             Page::create($request->all());

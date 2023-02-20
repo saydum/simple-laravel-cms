@@ -21,3 +21,7 @@ Route::resource('crud', PageController::class);
 //     Route::resource($crud->model, $crud->controller."::class");
 // }
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

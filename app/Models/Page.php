@@ -16,6 +16,7 @@ class Page extends Model
         'model_name',
         'controller',
         'table',
+        'slug',
         'module_id'
     ];
 
