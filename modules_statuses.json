@@ -1,5 +1,6 @@
 {
     "Test": true,
     "Posts": true,
-    "Portfolio": true
+    "Portfolio": true,
+    "Blog": true
 }

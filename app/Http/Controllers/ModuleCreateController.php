@@ -17,7 +17,7 @@ class ModuleCreateController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        Artisan::call("module:make {$request->input('module_name')}");
+        Artisan::call("module:make {$request->input('name')}");
         Module::create($request->all());
         return redirect()->route('dashboard');
     }
