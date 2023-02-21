@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DashboardController;
@@ -13,6 +14,7 @@ Route::get('/pages', [DashboardController::class, 'pages'])->name('pages');
 Route::get('/module-create', [ModuleCreateController::class, 'create'])->name('module.create');
 Route::post('/module-create', [ModuleCreateController::class, 'store'])->name('module.store');
 
+Route::resource('/users', UserController::class);
 
 // CRUD Controller
 Route::resource('crud', PageController::class);
