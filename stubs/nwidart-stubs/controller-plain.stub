@@ -1,9 +1,0 @@
-<?php
-
-namespace $pageLASS_NAMESPACE$;
-
-use Illuminate\Routing\Controller;
-
-class $pageLASS$ extends Controller
-{
-}
