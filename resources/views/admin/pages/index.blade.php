@@ -11,16 +11,20 @@
         <th scope="col">Module</th>
         <th scope="col">Controller</th>
         <th scope="col">Table</th>
+        <th scope="col">Slug</th>
       </tr>
     </thead>
     <tbody>
 
-        @foreach ($pages as $c)
+        @foreach ($pages as $page)
         <tr>
-            <th scope="row">{{ $c->id }}</th>
-            <td>{{ $c->model_name }}</td>
-            <td>{{ $c->controller }}</td>
-            <td>{{ $c->table }}</td>
+            <th scope="row">{{ $page->id }}</th>
+            <td>{{ $page->model_name }}</td>
+            <td>{{ $page->controller }}</td>
+            <td>{{ $page->table }}</td>
+            <td>
+                <a href="/{{ $page->slug }}">Перейти</a>
+            </td>
         </tr>
         @endforeach
 

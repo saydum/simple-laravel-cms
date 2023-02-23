@@ -1,36 +1,36 @@
 @mixin caret-down() {
-  border-top: $caret-width solid;
-  border-right: $caret-width solid transparent;
+  border-top: $pagearet-width solid;
+  border-right: $pagearet-width solid transparent;
   border-bottom: 0;
-  border-left: $caret-width solid transparent;
+  border-left: $pagearet-width solid transparent;
 }
 
 @mixin caret-up() {
   border-top: 0;
-  border-right: $caret-width solid transparent;
-  border-bottom: $caret-width solid;
-  border-left: $caret-width solid transparent;
+  border-right: $pagearet-width solid transparent;
+  border-bottom: $pagearet-width solid;
+  border-left: $pagearet-width solid transparent;
 }
 
 @mixin caret-right() {
-  border-top: $caret-width solid transparent;
+  border-top: $pagearet-width solid transparent;
   border-right: 0;
-  border-bottom: $caret-width solid transparent;
-  border-left: $caret-width solid;
+  border-bottom: $pagearet-width solid transparent;
+  border-left: $pagearet-width solid;
 }
 
 @mixin caret-left() {
-  border-top: $caret-width solid transparent;
-  border-right: $caret-width solid;
-  border-bottom: $caret-width solid transparent;
+  border-top: $pagearet-width solid transparent;
+  border-right: $pagearet-width solid;
+  border-bottom: $pagearet-width solid transparent;
 }
 
 @mixin caret($direction: down) {
   @if $enable-caret {
     &::after {
       display: inline-block;
-      margin-left: $caret-spacing;
-      vertical-align: $caret-vertical-align;
+      margin-left: $pagearet-spacing;
+      vertical-align: $pagearet-vertical-align;
       content: "";
       @if $direction == down {
         @include caret-down();
@@ -48,8 +48,8 @@
 
       &::before {
         display: inline-block;
-        margin-right: $caret-spacing;
-        vertical-align: $caret-vertical-align;
+        margin-right: $pagearet-spacing;
+        vertical-align: $pagearet-vertical-align;
         content: "";
         @include caret-left();
       }

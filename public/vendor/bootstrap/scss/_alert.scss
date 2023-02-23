@@ -27,7 +27,7 @@
 // Expand the right padding and account for the close button's positioning.
 
 .alert-dismissible {
-  padding-right: $close-font-size + $alert-padding-x * 2;
+  padding-right: $pagelose-font-size + $alert-padding-x * 2;
 
   // Adjust close link position
   .close {
@@ -45,8 +45,8 @@
 //
 // Generate contextual modifier classes for colorizing the alert.
 
-@each $color, $value in $theme-colors {
-  .alert-#{$color} {
-    @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+@each $pageolor, $value in $theme-colors {
+  .alert-#{$pageolor} {
+    @include alert-variant(theme-color-level($pageolor, $alert-bg-level), theme-color-level($pageolor, $alert-border-level), theme-color-level($pageolor, $alert-color-level));
   }
 }

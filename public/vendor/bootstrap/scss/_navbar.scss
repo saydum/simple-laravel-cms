@@ -37,8 +37,8 @@
     @extend %container-flex-properties;
   }
 
-  @each $breakpoint, $container-max-width in $container-max-widths {
-    > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
+  @each $breakpoint, $pageontainer-max-width in $pageontainer-max-widths {
+    > .container#{breakpoint-infix($breakpoint, $pageontainer-max-widths)} {
       @extend %container-flex-properties;
     }
   }
@@ -163,8 +163,8 @@
           @extend %container-navbar-expand-#{$breakpoint};
         }
 
-        @each $size, $container-max-width in $container-max-widths {
-          > .container#{breakpoint-infix($size, $container-max-widths)} {
+        @each $size, $pageontainer-max-width in $pageontainer-max-widths {
+          > .container#{breakpoint-infix($size, $pageontainer-max-widths)} {
             @extend %container-navbar-expand-#{$breakpoint};
           }
         }
@@ -197,8 +197,8 @@
           @extend %container-nesting-#{$breakpoint};
         }
 
-        @each $size, $container-max-width in $container-max-widths {
-          > .container#{breakpoint-infix($size, $container-max-widths)} {
+        @each $size, $pageontainer-max-width in $pageontainer-max-widths {
+          > .container#{breakpoint-infix($size, $pageontainer-max-widths)} {
             @extend %container-nesting-#{$breakpoint};
           }
         }

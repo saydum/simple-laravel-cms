@@ -1,15 +1,15 @@
 .close {
   float: right;
-  @include font-size($close-font-size);
-  font-weight: $close-font-weight;
+  @include font-size($pagelose-font-size);
+  font-weight: $pagelose-font-weight;
   line-height: 1;
-  color: $close-color;
-  text-shadow: $close-text-shadow;
+  color: $pagelose-color;
+  text-shadow: $pagelose-text-shadow;
   opacity: .5;
 
   // Override <a>'s hover style
   @include hover() {
-    color: $close-color;
+    color: $pagelose-color;
     text-decoration: none;
   }
 

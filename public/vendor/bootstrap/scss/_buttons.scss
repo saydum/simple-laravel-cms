@@ -62,14 +62,14 @@ fieldset:disabled a.btn {
 // Alternate buttons
 //
 
-@each $color, $value in $theme-colors {
-  .btn-#{$color} {
+@each $pageolor, $value in $theme-colors {
+  .btn-#{$pageolor} {
     @include button-variant($value, $value);
   }
 }
 
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
+@each $pageolor, $value in $theme-colors {
+  .btn-outline-#{$pageolor} {
     @include button-outline-variant($value);
   }
 }

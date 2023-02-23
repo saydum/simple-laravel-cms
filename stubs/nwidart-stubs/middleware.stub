@@ -5,7 +5,7 @@ namespace $NAMESPACE$;
 use Closure;
 use Illuminate\Http\Request;
 
-class $CLASS$
+class $pageLASS$
 {
     /**
      * Handle an incoming request.

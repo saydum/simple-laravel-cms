@@ -5,14 +5,14 @@ namespace $NAMESPACE$;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-class $CLASS$ extends ServiceProvider
+class $pageLASS$ extends ServiceProvider
 {
     /**
      * The module namespace to assume when generating URLs to actions.
      *
      * @var string
      */
-    protected $moduleNamespace = '$MODULE_NAMESPACE$\$MODULE$\$CONTROLLER_NAMESPACE$';
+    protected $moduleNamespace = '$MODULE_NAMESPACE$\$MODULE$\$pageONTROLLER_NAMESPACE$';
 
     /**
      * Called before routes are registered.

@@ -3306,8 +3306,8 @@
     var tag = abstractNodes.tag,
         _abstractNodes$attrib = abstractNodes.attributes,
         attributes = _abstractNodes$attrib === void 0 ? {} : _abstractNodes$attrib,
-        _abstractNodes$childr = abstractNodes.children,
-        children = _abstractNodes$childr === void 0 ? [] : _abstractNodes$childr;
+        _abstractNodes$pagehildr = abstractNodes.children,
+        children = _abstractNodes$pagehildr === void 0 ? [] : _abstractNodes$pagehildr;
 
     if (typeof abstractNodes === 'string') {
       return htmlEscape(abstractNodes);
@@ -4217,8 +4217,8 @@
         ensureCss();
         var _params$node = params.node,
             node = _params$node === void 0 ? DOCUMENT : _params$node,
-            _params$callback = params.callback,
-            callback = _params$callback === void 0 ? function () {} : _params$callback;
+            _params$pageallback = params.callback,
+            callback = _params$pageallback === void 0 ? function () {} : _params$pageallback;
 
         if (config.searchPseudoElements) {
           searchPseudoElements(node);
@@ -4279,8 +4279,8 @@
         title = _params$title === void 0 ? null : _params$title,
         _params$titleId = params.titleId,
         titleId = _params$titleId === void 0 ? null : _params$titleId,
-        _params$classes = params.classes,
-        classes = _params$classes === void 0 ? [] : _params$classes,
+        _params$pagelasses = params.classes,
+        classes = _params$pagelasses === void 0 ? [] : _params$pagelasses,
         _params$attributes = params.attributes,
         attributes = _params$attributes === void 0 ? {} : _params$attributes,
         _params$styles = params.styles,
@@ -4334,8 +4334,8 @@
         transform = _params$transform2 === void 0 ? meaninglessTransform : _params$transform2,
         _params$title2 = params.title,
         title = _params$title2 === void 0 ? null : _params$title2,
-        _params$classes2 = params.classes,
-        classes = _params$classes2 === void 0 ? [] : _params$classes2,
+        _params$pagelasses2 = params.classes,
+        classes = _params$pagelasses2 === void 0 ? [] : _params$pagelasses2,
         _params$attributes2 = params.attributes,
         attributes = _params$attributes2 === void 0 ? {} : _params$attributes2,
         _params$styles2 = params.styles,
@@ -4361,8 +4361,8 @@
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var _params$title3 = params.title,
         title = _params$title3 === void 0 ? null : _params$title3,
-        _params$classes3 = params.classes,
-        classes = _params$classes3 === void 0 ? [] : _params$classes3,
+        _params$pagelasses3 = params.classes,
+        classes = _params$pagelasses3 === void 0 ? [] : _params$pagelasses3,
         _params$attributes3 = params.attributes,
         attributes = _params$attributes3 === void 0 ? {} : _params$attributes3,
         _params$styles3 = params.styles,
@@ -4385,8 +4385,8 @@
   };
   var layer = function layer(assembler) {
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var _params$classes4 = params.classes,
-        classes = _params$classes4 === void 0 ? [] : _params$classes4;
+    var _params$pagelasses4 = params.classes,
+        classes = _params$pagelasses4 === void 0 ? [] : _params$pagelasses4;
     return apiObject({
       type: 'layer'
     }, function () {

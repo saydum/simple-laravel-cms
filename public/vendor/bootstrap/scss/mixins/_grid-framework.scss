@@ -3,7 +3,7 @@
 // Used only by Bootstrap to generate the correct number of grid classes given
 // any value of `$grid-columns`.
 
-@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+@mixin make-grid-columns($pageolumns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   // Common properties for all breakpoints
   %grid-column {
     position: relative;
@@ -15,9 +15,9 @@
   @each $breakpoint in map-keys($breakpoints) {
     $infix: breakpoint-infix($breakpoint, $breakpoints);
 
-    @if $columns > 0 {
+    @if $pageolumns > 0 {
       // Allow columns to stretch full width below their breakpoints
-      @for $i from 1 through $columns {
+      @for $i from 1 through $pageolumns {
         .col#{$infix}-#{$i} {
           @extend %grid-column;
         }
@@ -49,28 +49,28 @@
         @include make-col-auto();
       }
 
-      @if $columns > 0 {
-        @for $i from 1 through $columns {
+      @if $pageolumns > 0 {
+        @for $i from 1 through $pageolumns {
           .col#{$infix}-#{$i} {
-            @include make-col($i, $columns);
+            @include make-col($i, $pageolumns);
           }
         }
       }
 
       .order#{$infix}-first { order: -1; }
 
-      .order#{$infix}-last { order: $columns + 1; }
+      .order#{$infix}-last { order: $pageolumns + 1; }
 
-      @for $i from 0 through $columns {
+      @for $i from 0 through $pageolumns {
         .order#{$infix}-#{$i} { order: $i; }
       }
 
-      @if $columns > 0 {
-        // `$columns - 1` because offsetting by the width of an entire row isn't possible
-        @for $i from 0 through ($columns - 1) {
+      @if $pageolumns > 0 {
+        // `$pageolumns - 1` because offsetting by the width of an entire row isn't possible
+        @for $i from 0 through ($pageolumns - 1) {
           @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
             .offset#{$infix}-#{$i} {
-              @include make-col-offset($i, $columns);
+              @include make-col-offset($i, $pageolumns);
             }
           }
         }

@@ -18,10 +18,10 @@
 }
 
 // For each breakpoint, define the maximum width of the container in a media query
-@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-  @each $breakpoint, $container-max-width in $max-widths {
+@mixin make-container-max-widths($max-widths: $pageontainer-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $pageontainer-max-width in $max-widths {
     @include media-breakpoint-up($breakpoint, $breakpoints) {
-      max-width: $container-max-width;
+      max-width: $pageontainer-max-width;
     }
   }
   @include deprecate("The `make-container-max-widths` mixin", "v4.5.2", "v5");
@@ -37,12 +37,12 @@
   padding-left: $gutter / 2;
 }
 
-@mixin make-col($size, $columns: $grid-columns) {
-  flex: 0 0 percentage($size / $columns);
+@mixin make-col($size, $pageolumns: $grid-columns) {
+  flex: 0 0 percentage($size / $pageolumns);
   // Add a `max-width` to ensure content within each column does not blow out
   // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
   // do not appear to require this.
-  max-width: percentage($size / $columns);
+  max-width: percentage($size / $pageolumns);
 }
 
 @mixin make-col-auto() {
@@ -51,8 +51,8 @@
   max-width: 100%; // Reset earlier grid tiers
 }
 
-@mixin make-col-offset($size, $columns: $grid-columns) {
-  $num: $size / $columns;
+@mixin make-col-offset($size, $pageolumns: $grid-columns) {
+  $num: $size / $pageolumns;
   margin-left: if($num == 0, 0, percentage($num));
 }
 
@@ -61,9 +61,9 @@
 // Specify on a parent element(e.g., .row) to force immediate children into NN
 // numberof columns. Supports wrapping to new lines, but does not do a Masonry
 // style grid.
-@mixin row-cols($count) {
+@mixin row-cols($pageount) {
   > * {
-    flex: 0 0 100% / $count;
-    max-width: 100% / $count;
+    flex: 0 0 100% / $pageount;
+    max-width: 100% / $pageount;
   }
 }

@@ -4,7 +4,7 @@ namespace $NAMESPACE$;
 
 use Illuminate\View\Component;
 
-class $CLASS$ extends Component
+class $pageLASS$ extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class $CLASS$ extends Component
      */
     public function render()
     {
-        return view('$LOWER_NAME$::$COMPONENT_NAME$');
+        return view('$LOWER_NAME$::$pageOMPONENT_NAME$');
     }
 }

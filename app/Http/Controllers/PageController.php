@@ -52,7 +52,13 @@ class PageController extends Controller
                 // $request->input('model_name')}/Resources/views/index.blade.php
             }
 
-            Page::create($request->all());
+            Page::create([
+                'model_name' => $request->model_name,
+                'controller' => $request->controller,
+                'table' => $request->table,
+                'module_id' => $request->module_id,
+                'slug' => strtolower($request->controller),
+            ]);
         }
         return redirect()->route('crud.index');
     }
@@ -60,23 +66,23 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Page $crud): View
+    public function show(Page $pagerud): View
     {
-        return view('admin.pages.show', ['crud' => $crud]);
+        return view('admin.pages.show', ['crud' => $pagerud]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Page $crud): View
+    public function edit(Page $pagerud): View
     {
-        return view('admin.pages.edit', ['crud' => $crud]);
+        return view('admin.pages.edit', ['crud' => $pagerud]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Page $crud): RedirectResponse
+    public function update(Request $request, Page $pagerud): RedirectResponse
     {
         $validated = $request->validate([
             'model_name' => 'required|unique:pages|min:2|max:55',
@@ -85,7 +91,7 @@ class PageController extends Controller
         ]);
 
         if ($validated) {
-            $crud->update($request->all());
+            $pagerud->update($request->all());
         }
         return redirect()->route('crud.index');
     }
@@ -93,9 +99,9 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Page $crud): RedirectResponse
+    public function destroy(Page $pagerud): RedirectResponse
     {
-        $crud->delete();
+        $pagerud->delete();
         return redirect()->route('crud.index');
     }
 }

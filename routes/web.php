@@ -19,8 +19,8 @@ Route::resource('/users', UserController::class);
 // CRUD Controller
 Route::resource('crud', PageController::class);
 
-// foreach(Page::all() as $crud) {
-//     Route::resource($crud->model, $crud->controller."::class");
+// foreach(Page::all() as $pagerud) {
+//     Route::resource($pagerud->model, $pagerud->controller."::class");
 // }
 
 

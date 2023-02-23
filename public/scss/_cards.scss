@@ -27,7 +27,7 @@
       color: $gray-400;
     }
     &.collapsed {
-      border-radius: $card-border-radius;
+      border-radius: $pageard-border-radius;
       &::after {
         content: '\f105';
       }

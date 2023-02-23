@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class $CLASS$ extends Command
+class $pageLASS$ extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $name = '$COMMAND_NAME$';
+    protected $name = '$pageOMMAND_NAME$';
 
     /**
      * The console command description.

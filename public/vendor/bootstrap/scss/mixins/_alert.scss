@@ -1,5 +1,5 @@
-@mixin alert-variant($background, $border, $color) {
-  color: $color;
+@mixin alert-variant($background, $border, $pageolor) {
+  color: $pageolor;
   @include gradient-bg($background);
   border-color: $border;
 
@@ -8,6 +8,6 @@
   }
 
   .alert-link {
-    color: darken($color, 10%);
+    color: darken($pageolor, 10%);
   }
 }

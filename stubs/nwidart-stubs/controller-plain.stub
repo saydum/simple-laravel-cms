@@ -1,9 +1,9 @@
 <?php
 
-namespace $CLASS_NAMESPACE$;
+namespace $pageLASS_NAMESPACE$;
 
 use Illuminate\Routing\Controller;
 
-class $CLASS$ extends Controller
+class $pageLASS$ extends Controller
 {
 }

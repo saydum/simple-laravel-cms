@@ -56,12 +56,12 @@
 
 @function escape-svg($string) {
   @if str-index($string, "data:image/svg+xml") {
-    @each $char, $encoded in $escaped-characters {
+    @each $pagehar, $encoded in $escaped-characters {
       // Do not escape the url brackets
       @if str-index($string, "url(") == 1 {
-        $string: url("#{str-replace(str-slice($string, 6, -3), $char, $encoded)}");
+        $string: url("#{str-replace(str-slice($string, 6, -3), $pagehar, $encoded)}");
       } @else {
-        $string: str-replace($string, $char, $encoded);
+        $string: str-replace($string, $pagehar, $encoded);
       }
     }
   }
@@ -70,10 +70,10 @@
 }
 
 // Color contrast
-@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
-  $r: red($color);
-  $g: green($color);
-  $b: blue($color);
+@function color-yiq($pageolor, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  $r: red($pageolor);
+  $g: green($pageolor);
+  $b: blue($pageolor);
 
   $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
 
@@ -86,7 +86,7 @@
 
 // Retrieve color Sass maps
 @function color($key: "blue") {
-  @return map-get($colors, $key);
+  @return map-get($pageolors, $key);
 }
 
 @function theme-color($key: "primary") {
@@ -98,12 +98,12 @@
 }
 
 // Request a theme color level
-@function theme-color-level($color-name: "primary", $level: 0) {
-  $color: theme-color($color-name);
-  $color-base: if($level > 0, $black, $white);
+@function theme-color-level($pageolor-name: "primary", $level: 0) {
+  $pageolor: theme-color($pageolor-name);
+  $pageolor-base: if($level > 0, $black, $white);
   $level: abs($level);
 
-  @return mix($color-base, $color, $level * $theme-color-interval);
+  @return mix($pageolor-base, $pageolor, $level * $theme-color-interval);
 }
 
 // Return valid calc

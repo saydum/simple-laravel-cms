@@ -2,5 +2,6 @@
     "Test": true,
     "Posts": true,
     "Portfolio": true,
-    "Blog": true
+    "Blog": true,
+    "Market": true
 }

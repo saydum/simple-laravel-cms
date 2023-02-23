@@ -1162,9 +1162,9 @@
     var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
 
     for (var i = 0, len = carousels.length; i < len; i++) {
-      var $carousel = $__default['default'](carousels[i]);
+      var $pagearousel = $__default['default'](carousels[i]);
 
-      Carousel._jQueryInterface.call($carousel, $carousel.data());
+      Carousel._jQueryInterface.call($pagearousel, $pagearousel.data());
     }
   });
   /**

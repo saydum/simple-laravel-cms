@@ -7,12 +7,12 @@
   display: flex;
   flex-direction: column;
   min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
-  height: $card-height;
+  height: $pageard-height;
   word-wrap: break-word;
-  background-color: $card-bg;
+  background-color: $pageard-bg;
   background-clip: border-box;
-  border: $card-border-width solid $card-border-color;
-  @include border-radius($card-border-radius);
+  border: $pageard-border-width solid $pageard-border-color;
+  @include border-radius($pageard-border-radius);
 
   > hr {
     margin-right: 0;
@@ -25,12 +25,12 @@
 
     &:first-child {
       border-top-width: 0;
-      @include border-top-radius($card-inner-border-radius);
+      @include border-top-radius($pageard-inner-border-radius);
     }
 
     &:last-child  {
       border-bottom-width: 0;
-      @include border-bottom-radius($card-inner-border-radius);
+      @include border-bottom-radius($pageard-inner-border-radius);
     }
   }
 
@@ -49,16 +49,16 @@
   // Workaround for the image size bug in IE
   // See: https://github.com/twbs/bootstrap/pull/28855
   min-height: 1px;
-  padding: $card-spacer-x;
-  color: $card-color;
+  padding: $pageard-spacer-x;
+  color: $pageard-color;
 }
 
 .card-title {
-  margin-bottom: $card-spacer-y;
+  margin-bottom: $pageard-spacer-y;
 }
 
 .card-subtitle {
-  margin-top: -$card-spacer-y / 2;
+  margin-top: -$pageard-spacer-y / 2;
   margin-bottom: 0;
 }
 
@@ -72,7 +72,7 @@
   }
 
   + .card-link {
-    margin-left: $card-spacer-x;
+    margin-left: $pageard-spacer-x;
   }
 }
 
@@ -81,25 +81,25 @@
 //
 
 .card-header {
-  padding: $card-spacer-y $card-spacer-x;
+  padding: $pageard-spacer-y $pageard-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  color: $card-cap-color;
-  background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
+  color: $pageard-cap-color;
+  background-color: $pageard-cap-bg;
+  border-bottom: $pageard-border-width solid $pageard-border-color;
 
   &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+    @include border-radius($pageard-inner-border-radius $pageard-inner-border-radius 0 0);
   }
 }
 
 .card-footer {
-  padding: $card-spacer-y $card-spacer-x;
-  color: $card-cap-color;
-  background-color: $card-cap-bg;
-  border-top: $card-border-width solid $card-border-color;
+  padding: $pageard-spacer-y $pageard-spacer-x;
+  color: $pageard-cap-color;
+  background-color: $pageard-cap-bg;
+  border-top: $pageard-border-width solid $pageard-border-color;
 
   &:last-child {
-    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+    @include border-radius(0 0 $pageard-inner-border-radius $pageard-inner-border-radius);
   }
 }
 
@@ -109,15 +109,15 @@
 //
 
 .card-header-tabs {
-  margin-right: -$card-spacer-x / 2;
-  margin-bottom: -$card-spacer-y;
-  margin-left: -$card-spacer-x / 2;
+  margin-right: -$pageard-spacer-x / 2;
+  margin-bottom: -$pageard-spacer-y;
+  margin-left: -$pageard-spacer-x / 2;
   border-bottom: 0;
 }
 
 .card-header-pills {
-  margin-right: -$card-spacer-x / 2;
-  margin-left: -$card-spacer-x / 2;
+  margin-right: -$pageard-spacer-x / 2;
+  margin-left: -$pageard-spacer-x / 2;
 }
 
 // Card image
@@ -127,8 +127,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: $card-img-overlay-padding;
-  @include border-radius($card-inner-border-radius);
+  padding: $pageard-img-overlay-padding;
+  @include border-radius($pageard-inner-border-radius);
 }
 
 .card-img,
@@ -140,12 +140,12 @@
 
 .card-img,
 .card-img-top {
-  @include border-top-radius($card-inner-border-radius);
+  @include border-top-radius($pageard-inner-border-radius);
 }
 
 .card-img,
 .card-img-bottom {
-  @include border-bottom-radius($card-inner-border-radius);
+  @include border-bottom-radius($pageard-inner-border-radius);
 }
 
 
@@ -153,21 +153,21 @@
 
 .card-deck {
   .card {
-    margin-bottom: $card-deck-margin;
+    margin-bottom: $pageard-deck-margin;
   }
 
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    margin-right: -$card-deck-margin;
-    margin-left: -$card-deck-margin;
+    margin-right: -$pageard-deck-margin;
+    margin-left: -$pageard-deck-margin;
 
     .card {
       // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
       flex: 1 0 0%;
-      margin-right: $card-deck-margin;
+      margin-right: $pageard-deck-margin;
       margin-bottom: 0; // Override the default
-      margin-left: $card-deck-margin;
+      margin-left: $pageard-deck-margin;
     }
   }
 }
@@ -181,7 +181,7 @@
   // The child selector allows nested `.card` within `.card-group`
   // to display properly.
   > .card {
-    margin-bottom: $card-group-margin;
+    margin-bottom: $pageard-group-margin;
   }
 
   @include media-breakpoint-up(sm) {
@@ -242,12 +242,12 @@
 
 .card-columns {
   .card {
-    margin-bottom: $card-columns-margin;
+    margin-bottom: $pageard-columns-margin;
   }
 
   @include media-breakpoint-up(sm) {
-    column-count: $card-columns-count;
-    column-gap: $card-columns-gap;
+    column-count: $pageard-columns-count;
+    column-gap: $pageard-columns-gap;
     orphans: 1;
     widows: 1;
 
@@ -280,7 +280,7 @@
 
     > .card-header {
       @include border-radius(0);
-      margin-bottom: -$card-border-width;
+      margin-bottom: -$pageard-border-width;
     }
   }
 }

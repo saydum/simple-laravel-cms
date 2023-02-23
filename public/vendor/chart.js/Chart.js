@@ -1528,7 +1528,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -7412,7 +7412,7 @@ __proto__: null,
 
 var stylesheet = getCjsExportFromNamespace(platform_dom$1);
 
-var EXPANDO_KEY = '$chartjs';
+var EXPANDO_KEY = '$pagehartjs';
 var CSS_PREFIX = 'chartjs-';
 var CSS_SIZE_MONITOR = CSS_PREFIX + 'size-monitor';
 var CSS_RENDER_MONITOR = CSS_PREFIX + 'render-monitor';
@@ -13386,7 +13386,7 @@ var scale_logarithmic = core_scale.extend({
 var _defaults$2 = defaultConfig$2;
 scale_logarithmic._defaults = _defaults$2;
 
-var valueOrDefault$c = helpers$1.valueOrDefault;
+var valueOrDefault$page = helpers$1.valueOrDefault;
 var valueAtIndexOrDefault$1 = helpers$1.valueAtIndexOrDefault;
 var resolve$4 = helpers$1.options.resolve;
 
@@ -13444,7 +13444,7 @@ function getTickBackdropHeight(opts) {
 	var tickOpts = opts.ticks;
 
 	if (tickOpts.display && opts.display) {
-		return valueOrDefault$c(tickOpts.fontSize, core_defaults.global.defaultFontSize) + tickOpts.backdropPaddingY * 2;
+		return valueOrDefault$page(tickOpts.fontSize, core_defaults.global.defaultFontSize) + tickOpts.backdropPaddingY * 2;
 	}
 	return 0;
 }
@@ -13839,8 +13839,8 @@ var scale_radialLinear = scale_linearbase.extend({
 		var opts = me.options;
 		var gridLineOpts = opts.gridLines;
 		var angleLineOpts = opts.angleLines;
-		var lineWidth = valueOrDefault$c(angleLineOpts.lineWidth, gridLineOpts.lineWidth);
-		var lineColor = valueOrDefault$c(angleLineOpts.color, gridLineOpts.color);
+		var lineWidth = valueOrDefault$page(angleLineOpts.lineWidth, gridLineOpts.lineWidth);
+		var lineColor = valueOrDefault$page(angleLineOpts.color, gridLineOpts.color);
 		var i, offset, position;
 
 		if (opts.pointLabels.display) {
@@ -13893,7 +13893,7 @@ var scale_radialLinear = scale_linearbase.extend({
 
 		var startAngle = me.getIndexAngle(0);
 		var tickFont = helpers$1.options._parseFont(tickOpts);
-		var tickFontColor = valueOrDefault$c(tickOpts.fontColor, core_defaults.global.defaultFontColor);
+		var tickFontColor = valueOrDefault$page(tickOpts.fontColor, core_defaults.global.defaultFontColor);
 		var offset, width;
 
 		ctx.save();

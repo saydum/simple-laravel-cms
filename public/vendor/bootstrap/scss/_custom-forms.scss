@@ -12,58 +12,58 @@
   z-index: 1;
   display: block;
   min-height: $font-size-base * $line-height-base;
-  padding-left: $custom-control-gutter + $custom-control-indicator-size;
+  padding-left: $pageustom-control-gutter + $pageustom-control-indicator-size;
   color-adjust: exact; // Keep themed appearance for print
 }
 
 .custom-control-inline {
   display: inline-flex;
-  margin-right: $custom-control-spacer-x;
+  margin-right: $pageustom-control-spacer-x;
 }
 
 .custom-control-input {
   position: absolute;
   left: 0;
   z-index: -1; // Put the input behind the label so it doesn't overlay text
-  width: $custom-control-indicator-size;
-  height: ($font-size-base * $line-height-base + $custom-control-indicator-size) / 2;
+  width: $pageustom-control-indicator-size;
+  height: ($font-size-base * $line-height-base + $pageustom-control-indicator-size) / 2;
   opacity: 0;
 
   &:checked ~ .custom-control-label::before {
-    color: $custom-control-indicator-checked-color;
-    border-color: $custom-control-indicator-checked-border-color;
-    @include gradient-bg($custom-control-indicator-checked-bg);
-    @include box-shadow($custom-control-indicator-checked-box-shadow);
+    color: $pageustom-control-indicator-checked-color;
+    border-color: $pageustom-control-indicator-checked-border-color;
+    @include gradient-bg($pageustom-control-indicator-checked-bg);
+    @include box-shadow($pageustom-control-indicator-checked-box-shadow);
   }
 
   &:focus ~ .custom-control-label::before {
     // the mixin is not used here to make sure there is feedback
     @if $enable-shadows {
-      box-shadow: $input-box-shadow, $custom-control-indicator-focus-box-shadow;
+      box-shadow: $input-box-shadow, $pageustom-control-indicator-focus-box-shadow;
     } @else {
-      box-shadow: $custom-control-indicator-focus-box-shadow;
+      box-shadow: $pageustom-control-indicator-focus-box-shadow;
     }
   }
 
   &:focus:not(:checked) ~ .custom-control-label::before {
-    border-color: $custom-control-indicator-focus-border-color;
+    border-color: $pageustom-control-indicator-focus-border-color;
   }
 
   &:not(:disabled):active ~ .custom-control-label::before {
-    color: $custom-control-indicator-active-color;
-    background-color: $custom-control-indicator-active-bg;
-    border-color: $custom-control-indicator-active-border-color;
-    @include box-shadow($custom-control-indicator-active-box-shadow);
+    color: $pageustom-control-indicator-active-color;
+    background-color: $pageustom-control-indicator-active-bg;
+    border-color: $pageustom-control-indicator-active-border-color;
+    @include box-shadow($pageustom-control-indicator-active-box-shadow);
   }
 
   // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
   &[disabled],
   &:disabled {
     ~ .custom-control-label {
-      color: $custom-control-label-disabled-color;
+      color: $pageustom-control-label-disabled-color;
 
       &::before {
-        background-color: $custom-control-indicator-disabled-bg;
+        background-color: $pageustom-control-indicator-disabled-bg;
       }
     }
   }
@@ -76,35 +76,35 @@
 .custom-control-label {
   position: relative;
   margin-bottom: 0;
-  color: $custom-control-label-color;
+  color: $pageustom-control-label-color;
   vertical-align: top;
-  cursor: $custom-control-cursor;
+  cursor: $pageustom-control-cursor;
 
   // Background-color and (when enabled) gradient
   &::before {
     position: absolute;
-    top: ($font-size-base * $line-height-base - $custom-control-indicator-size) / 2;
-    left: -($custom-control-gutter + $custom-control-indicator-size);
+    top: ($font-size-base * $line-height-base - $pageustom-control-indicator-size) / 2;
+    left: -($pageustom-control-gutter + $pageustom-control-indicator-size);
     display: block;
-    width: $custom-control-indicator-size;
-    height: $custom-control-indicator-size;
+    width: $pageustom-control-indicator-size;
+    height: $pageustom-control-indicator-size;
     pointer-events: none;
     content: "";
-    background-color: $custom-control-indicator-bg;
-    border: $custom-control-indicator-border-color solid $custom-control-indicator-border-width;
-    @include box-shadow($custom-control-indicator-box-shadow);
+    background-color: $pageustom-control-indicator-bg;
+    border: $pageustom-control-indicator-border-color solid $pageustom-control-indicator-border-width;
+    @include box-shadow($pageustom-control-indicator-box-shadow);
   }
 
   // Foreground (icon)
   &::after {
     position: absolute;
-    top: ($font-size-base * $line-height-base - $custom-control-indicator-size) / 2;
-    left: -($custom-control-gutter + $custom-control-indicator-size);
+    top: ($font-size-base * $line-height-base - $pageustom-control-indicator-size) / 2;
+    left: -($pageustom-control-gutter + $pageustom-control-indicator-size);
     display: block;
-    width: $custom-control-indicator-size;
-    height: $custom-control-indicator-size;
+    width: $pageustom-control-indicator-size;
+    height: $pageustom-control-indicator-size;
     content: "";
-    background: 50% / #{$custom-control-indicator-bg-size} no-repeat;
+    background: 50% / #{$pageustom-control-indicator-bg-size} no-repeat;
   }
 }
 
@@ -115,32 +115,32 @@
 
 .custom-checkbox {
   .custom-control-label::before {
-    @include border-radius($custom-checkbox-indicator-border-radius);
+    @include border-radius($pageustom-checkbox-indicator-border-radius);
   }
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-image: escape-svg($custom-checkbox-indicator-icon-checked);
+      background-image: escape-svg($pageustom-checkbox-indicator-icon-checked);
     }
   }
 
   .custom-control-input:indeterminate ~ .custom-control-label {
     &::before {
-      border-color: $custom-checkbox-indicator-indeterminate-border-color;
-      @include gradient-bg($custom-checkbox-indicator-indeterminate-bg);
-      @include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow);
+      border-color: $pageustom-checkbox-indicator-indeterminate-border-color;
+      @include gradient-bg($pageustom-checkbox-indicator-indeterminate-bg);
+      @include box-shadow($pageustom-checkbox-indicator-indeterminate-box-shadow);
     }
     &::after {
-      background-image: escape-svg($custom-checkbox-indicator-icon-indeterminate);
+      background-image: escape-svg($pageustom-checkbox-indicator-icon-indeterminate);
     }
   }
 
   .custom-control-input:disabled {
     &:checked ~ .custom-control-label::before {
-      @include gradient-bg($custom-control-indicator-checked-disabled-bg);
+      @include gradient-bg($pageustom-control-indicator-checked-disabled-bg);
     }
     &:indeterminate ~ .custom-control-label::before {
-      @include gradient-bg($custom-control-indicator-checked-disabled-bg);
+      @include gradient-bg($pageustom-control-indicator-checked-disabled-bg);
     }
   }
 }
@@ -152,18 +152,18 @@
 .custom-radio {
   .custom-control-label::before {
     // stylelint-disable-next-line property-disallowed-list
-    border-radius: $custom-radio-indicator-border-radius;
+    border-radius: $pageustom-radio-indicator-border-radius;
   }
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-image: escape-svg($custom-radio-indicator-icon-checked);
+      background-image: escape-svg($pageustom-radio-indicator-icon-checked);
     }
   }
 
   .custom-control-input:disabled {
     &:checked ~ .custom-control-label::before {
-      @include gradient-bg($custom-control-indicator-checked-disabled-bg);
+      @include gradient-bg($pageustom-control-indicator-checked-disabled-bg);
     }
   }
 }
@@ -174,39 +174,39 @@
 // Tweak a few things for switches
 
 .custom-switch {
-  padding-left: $custom-switch-width + $custom-control-gutter;
+  padding-left: $pageustom-switch-width + $pageustom-control-gutter;
 
   .custom-control-label {
     &::before {
-      left: -($custom-switch-width + $custom-control-gutter);
-      width: $custom-switch-width;
+      left: -($pageustom-switch-width + $pageustom-control-gutter);
+      width: $pageustom-switch-width;
       pointer-events: all;
       // stylelint-disable-next-line property-disallowed-list
-      border-radius: $custom-switch-indicator-border-radius;
+      border-radius: $pageustom-switch-indicator-border-radius;
     }
 
     &::after {
-      top: add(($font-size-base * $line-height-base - $custom-control-indicator-size) / 2, $custom-control-indicator-border-width * 2);
-      left: add(-($custom-switch-width + $custom-control-gutter), $custom-control-indicator-border-width * 2);
-      width: $custom-switch-indicator-size;
-      height: $custom-switch-indicator-size;
-      background-color: $custom-control-indicator-border-color;
+      top: add(($font-size-base * $line-height-base - $pageustom-control-indicator-size) / 2, $pageustom-control-indicator-border-width * 2);
+      left: add(-($pageustom-switch-width + $pageustom-control-gutter), $pageustom-control-indicator-border-width * 2);
+      width: $pageustom-switch-indicator-size;
+      height: $pageustom-switch-indicator-size;
+      background-color: $pageustom-control-indicator-border-color;
       // stylelint-disable-next-line property-disallowed-list
-      border-radius: $custom-switch-indicator-border-radius;
-      @include transition(transform .15s ease-in-out, $custom-forms-transition);
+      border-radius: $pageustom-switch-indicator-border-radius;
+      @include transition(transform .15s ease-in-out, $pageustom-forms-transition);
     }
   }
 
   .custom-control-input:checked ~ .custom-control-label {
     &::after {
-      background-color: $custom-control-indicator-bg;
-      transform: translateX($custom-switch-width - $custom-control-indicator-size);
+      background-color: $pageustom-control-indicator-bg;
+      transform: translateX($pageustom-switch-width - $pageustom-control-indicator-size);
     }
   }
 
   .custom-control-input:disabled {
     &:checked ~ .custom-control-label::before {
-      @include gradient-bg($custom-control-indicator-checked-disabled-bg);
+      @include gradient-bg($pageustom-control-indicator-checked-disabled-bg);
     }
   }
 }
@@ -221,28 +221,28 @@
 .custom-select {
   display: inline-block;
   width: 100%;
-  height: $custom-select-height;
-  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
-  font-family: $custom-select-font-family;
-  @include font-size($custom-select-font-size);
-  font-weight: $custom-select-font-weight;
-  line-height: $custom-select-line-height;
-  color: $custom-select-color;
+  height: $pageustom-select-height;
+  padding: $pageustom-select-padding-y ($pageustom-select-padding-x + $pageustom-select-indicator-padding) $pageustom-select-padding-y $pageustom-select-padding-x;
+  font-family: $pageustom-select-font-family;
+  @include font-size($pageustom-select-font-size);
+  font-weight: $pageustom-select-font-weight;
+  line-height: $pageustom-select-line-height;
+  color: $pageustom-select-color;
   vertical-align: middle;
-  background: $custom-select-bg $custom-select-background;
-  border: $custom-select-border-width solid $custom-select-border-color;
-  @include border-radius($custom-select-border-radius, 0);
-  @include box-shadow($custom-select-box-shadow);
+  background: $pageustom-select-bg $pageustom-select-background;
+  border: $pageustom-select-border-width solid $pageustom-select-border-color;
+  @include border-radius($pageustom-select-border-radius, 0);
+  @include box-shadow($pageustom-select-box-shadow);
   appearance: none;
 
   &:focus {
-    border-color: $custom-select-focus-border-color;
+    border-color: $pageustom-select-focus-border-color;
     outline: 0;
     @if $enable-shadows {
-      @include box-shadow($custom-select-box-shadow, $custom-select-focus-box-shadow);
+      @include box-shadow($pageustom-select-box-shadow, $pageustom-select-focus-box-shadow);
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: $custom-select-focus-box-shadow;
+      box-shadow: $pageustom-select-focus-box-shadow;
     }
 
     &::-ms-value {
@@ -259,13 +259,13 @@
   &[multiple],
   &[size]:not([size="1"]) {
     height: auto;
-    padding-right: $custom-select-padding-x;
+    padding-right: $pageustom-select-padding-x;
     background-image: none;
   }
 
   &:disabled {
-    color: $custom-select-disabled-color;
-    background-color: $custom-select-disabled-bg;
+    color: $pageustom-select-disabled-color;
+    background-color: $pageustom-select-disabled-bg;
   }
 
   // Hides the default caret in IE11
@@ -276,24 +276,24 @@
   // Remove outline from select box in FF
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $custom-select-color;
+    text-shadow: 0 0 0 $pageustom-select-color;
   }
 }
 
 .custom-select-sm {
-  height: $custom-select-height-sm;
-  padding-top: $custom-select-padding-y-sm;
-  padding-bottom: $custom-select-padding-y-sm;
-  padding-left: $custom-select-padding-x-sm;
-  @include font-size($custom-select-font-size-sm);
+  height: $pageustom-select-height-sm;
+  padding-top: $pageustom-select-padding-y-sm;
+  padding-bottom: $pageustom-select-padding-y-sm;
+  padding-left: $pageustom-select-padding-x-sm;
+  @include font-size($pageustom-select-font-size-sm);
 }
 
 .custom-select-lg {
-  height: $custom-select-height-lg;
-  padding-top: $custom-select-padding-y-lg;
-  padding-bottom: $custom-select-padding-y-lg;
-  padding-left: $custom-select-padding-x-lg;
-  @include font-size($custom-select-font-size-lg);
+  height: $pageustom-select-height-lg;
+  padding-top: $pageustom-select-padding-y-lg;
+  padding-bottom: $pageustom-select-padding-y-lg;
+  padding-left: $pageustom-select-padding-x-lg;
+  @include font-size($pageustom-select-font-size-lg);
 }
 
 
@@ -305,7 +305,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  height: $custom-file-height;
+  height: $pageustom-file-height;
   margin-bottom: 0;
 }
 
@@ -313,23 +313,23 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: $custom-file-height;
+  height: $pageustom-file-height;
   margin: 0;
   overflow: hidden;
   opacity: 0;
 
   &:focus ~ .custom-file-label {
-    border-color: $custom-file-focus-border-color;
-    box-shadow: $custom-file-focus-box-shadow;
+    border-color: $pageustom-file-focus-border-color;
+    box-shadow: $pageustom-file-focus-box-shadow;
   }
 
   // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
   &[disabled] ~ .custom-file-label,
   &:disabled ~ .custom-file-label {
-    background-color: $custom-file-disabled-bg;
+    background-color: $pageustom-file-disabled-bg;
   }
 
-  @each $lang, $value in $custom-file-text {
+  @each $lang, $value in $pageustom-file-text {
     &:lang(#{$lang}) ~ .custom-file-label::after {
       content: $value;
     }
@@ -346,17 +346,17 @@
   right: 0;
   left: 0;
   z-index: 1;
-  height: $custom-file-height;
-  padding: $custom-file-padding-y $custom-file-padding-x;
+  height: $pageustom-file-height;
+  padding: $pageustom-file-padding-y $pageustom-file-padding-x;
   overflow: hidden;
-  font-family: $custom-file-font-family;
-  font-weight: $custom-file-font-weight;
-  line-height: $custom-file-line-height;
-  color: $custom-file-color;
-  background-color: $custom-file-bg;
-  border: $custom-file-border-width solid $custom-file-border-color;
-  @include border-radius($custom-file-border-radius);
-  @include box-shadow($custom-file-box-shadow);
+  font-family: $pageustom-file-font-family;
+  font-weight: $pageustom-file-font-weight;
+  line-height: $pageustom-file-line-height;
+  color: $pageustom-file-color;
+  background-color: $pageustom-file-bg;
+  border: $pageustom-file-border-width solid $pageustom-file-border-color;
+  @include border-radius($pageustom-file-border-radius);
+  @include box-shadow($pageustom-file-box-shadow);
 
   &::after {
     position: absolute;
@@ -365,14 +365,14 @@
     bottom: 0;
     z-index: 3;
     display: block;
-    height: $custom-file-height-inner;
-    padding: $custom-file-padding-y $custom-file-padding-x;
-    line-height: $custom-file-line-height;
-    color: $custom-file-button-color;
+    height: $pageustom-file-height-inner;
+    padding: $pageustom-file-padding-y $pageustom-file-padding-x;
+    line-height: $pageustom-file-line-height;
+    color: $pageustom-file-button-color;
     content: "Browse";
-    @include gradient-bg($custom-file-button-bg);
+    @include gradient-bg($pageustom-file-button-bg);
     border-left: inherit;
-    @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
+    @include border-radius(0 $pageustom-file-border-radius $pageustom-file-border-radius 0);
   }
 }
 
@@ -384,7 +384,7 @@
 
 .custom-range {
   width: 100%;
-  height: add($custom-range-thumb-height, $custom-range-thumb-focus-box-shadow-width * 2);
+  height: add($pageustom-range-thumb-height, $pageustom-range-thumb-focus-box-shadow-width * 2);
   padding: 0; // Need to reset padding
   background-color: transparent;
   appearance: none;
@@ -394,9 +394,9 @@
 
     // Pseudo-elements must be split across multiple rulesets to have an effect.
     // No box-shadow() mixin for focus accessibility.
-    &::-webkit-slider-thumb { box-shadow: $custom-range-thumb-focus-box-shadow; }
-    &::-moz-range-thumb     { box-shadow: $custom-range-thumb-focus-box-shadow; }
-    &::-ms-thumb            { box-shadow: $custom-range-thumb-focus-box-shadow; }
+    &::-webkit-slider-thumb { box-shadow: $pageustom-range-thumb-focus-box-shadow; }
+    &::-moz-range-thumb     { box-shadow: $pageustom-range-thumb-focus-box-shadow; }
+    &::-ms-thumb            { box-shadow: $pageustom-range-thumb-focus-box-shadow; }
   }
 
   &::-moz-focus-outer {
@@ -404,101 +404,101 @@
   }
 
   &::-webkit-slider-thumb {
-    width: $custom-range-thumb-width;
-    height: $custom-range-thumb-height;
-    margin-top: ($custom-range-track-height - $custom-range-thumb-height) / 2; // Webkit specific
-    @include gradient-bg($custom-range-thumb-bg);
-    border: $custom-range-thumb-border;
-    @include border-radius($custom-range-thumb-border-radius);
-    @include box-shadow($custom-range-thumb-box-shadow);
-    @include transition($custom-forms-transition);
+    width: $pageustom-range-thumb-width;
+    height: $pageustom-range-thumb-height;
+    margin-top: ($pageustom-range-track-height - $pageustom-range-thumb-height) / 2; // Webkit specific
+    @include gradient-bg($pageustom-range-thumb-bg);
+    border: $pageustom-range-thumb-border;
+    @include border-radius($pageustom-range-thumb-border-radius);
+    @include box-shadow($pageustom-range-thumb-box-shadow);
+    @include transition($pageustom-forms-transition);
     appearance: none;
 
     &:active {
-      @include gradient-bg($custom-range-thumb-active-bg);
+      @include gradient-bg($pageustom-range-thumb-active-bg);
     }
   }
 
   &::-webkit-slider-runnable-track {
-    width: $custom-range-track-width;
-    height: $custom-range-track-height;
+    width: $pageustom-range-track-width;
+    height: $pageustom-range-track-height;
     color: transparent; // Why?
-    cursor: $custom-range-track-cursor;
-    background-color: $custom-range-track-bg;
+    cursor: $pageustom-range-track-cursor;
+    background-color: $pageustom-range-track-bg;
     border-color: transparent;
-    @include border-radius($custom-range-track-border-radius);
-    @include box-shadow($custom-range-track-box-shadow);
+    @include border-radius($pageustom-range-track-border-radius);
+    @include box-shadow($pageustom-range-track-box-shadow);
   }
 
   &::-moz-range-thumb {
-    width: $custom-range-thumb-width;
-    height: $custom-range-thumb-height;
-    @include gradient-bg($custom-range-thumb-bg);
-    border: $custom-range-thumb-border;
-    @include border-radius($custom-range-thumb-border-radius);
-    @include box-shadow($custom-range-thumb-box-shadow);
-    @include transition($custom-forms-transition);
+    width: $pageustom-range-thumb-width;
+    height: $pageustom-range-thumb-height;
+    @include gradient-bg($pageustom-range-thumb-bg);
+    border: $pageustom-range-thumb-border;
+    @include border-radius($pageustom-range-thumb-border-radius);
+    @include box-shadow($pageustom-range-thumb-box-shadow);
+    @include transition($pageustom-forms-transition);
     appearance: none;
 
     &:active {
-      @include gradient-bg($custom-range-thumb-active-bg);
+      @include gradient-bg($pageustom-range-thumb-active-bg);
     }
   }
 
   &::-moz-range-track {
-    width: $custom-range-track-width;
-    height: $custom-range-track-height;
+    width: $pageustom-range-track-width;
+    height: $pageustom-range-track-height;
     color: transparent;
-    cursor: $custom-range-track-cursor;
-    background-color: $custom-range-track-bg;
+    cursor: $pageustom-range-track-cursor;
+    background-color: $pageustom-range-track-bg;
     border-color: transparent; // Firefox specific?
-    @include border-radius($custom-range-track-border-radius);
-    @include box-shadow($custom-range-track-box-shadow);
+    @include border-radius($pageustom-range-track-border-radius);
+    @include box-shadow($pageustom-range-track-box-shadow);
   }
 
   &::-ms-thumb {
-    width: $custom-range-thumb-width;
-    height: $custom-range-thumb-height;
+    width: $pageustom-range-thumb-width;
+    height: $pageustom-range-thumb-height;
     margin-top: 0; // Edge specific
-    margin-right: $custom-range-thumb-focus-box-shadow-width; // Workaround that overflowed box-shadow is hidden.
-    margin-left: $custom-range-thumb-focus-box-shadow-width;  // Workaround that overflowed box-shadow is hidden.
-    @include gradient-bg($custom-range-thumb-bg);
-    border: $custom-range-thumb-border;
-    @include border-radius($custom-range-thumb-border-radius);
-    @include box-shadow($custom-range-thumb-box-shadow);
-    @include transition($custom-forms-transition);
+    margin-right: $pageustom-range-thumb-focus-box-shadow-width; // Workaround that overflowed box-shadow is hidden.
+    margin-left: $pageustom-range-thumb-focus-box-shadow-width;  // Workaround that overflowed box-shadow is hidden.
+    @include gradient-bg($pageustom-range-thumb-bg);
+    border: $pageustom-range-thumb-border;
+    @include border-radius($pageustom-range-thumb-border-radius);
+    @include box-shadow($pageustom-range-thumb-box-shadow);
+    @include transition($pageustom-forms-transition);
     appearance: none;
 
     &:active {
-      @include gradient-bg($custom-range-thumb-active-bg);
+      @include gradient-bg($pageustom-range-thumb-active-bg);
     }
   }
 
   &::-ms-track {
-    width: $custom-range-track-width;
-    height: $custom-range-track-height;
+    width: $pageustom-range-track-width;
+    height: $pageustom-range-track-height;
     color: transparent;
-    cursor: $custom-range-track-cursor;
+    cursor: $pageustom-range-track-cursor;
     background-color: transparent;
     border-color: transparent;
-    border-width: $custom-range-thumb-height / 2;
-    @include box-shadow($custom-range-track-box-shadow);
+    border-width: $pageustom-range-thumb-height / 2;
+    @include box-shadow($pageustom-range-track-box-shadow);
   }
 
   &::-ms-fill-lower {
-    background-color: $custom-range-track-bg;
-    @include border-radius($custom-range-track-border-radius);
+    background-color: $pageustom-range-track-bg;
+    @include border-radius($pageustom-range-track-border-radius);
   }
 
   &::-ms-fill-upper {
     margin-right: 15px; // arbitrary?
-    background-color: $custom-range-track-bg;
-    @include border-radius($custom-range-track-border-radius);
+    background-color: $pageustom-range-track-bg;
+    @include border-radius($pageustom-range-track-border-radius);
   }
 
   &:disabled {
     &::-webkit-slider-thumb {
-      background-color: $custom-range-thumb-disabled-bg;
+      background-color: $pageustom-range-thumb-disabled-bg;
     }
 
     &::-webkit-slider-runnable-track {
@@ -506,7 +506,7 @@
     }
 
     &::-moz-range-thumb {
-      background-color: $custom-range-thumb-disabled-bg;
+      background-color: $pageustom-range-thumb-disabled-bg;
     }
 
     &::-moz-range-track {
@@ -514,7 +514,7 @@
     }
 
     &::-ms-thumb {
-      background-color: $custom-range-thumb-disabled-bg;
+      background-color: $pageustom-range-thumb-disabled-bg;
     }
   }
 }
@@ -522,5 +522,5 @@
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-  @include transition($custom-forms-transition);
+  @include transition($pageustom-forms-transition);
 }
