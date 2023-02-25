@@ -18,7 +18,9 @@
             <th scope="row">{{ $user->id }}</th>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
-            <td>Root</td>
+            <td class="text-danger">
+                @foreach($user->roles as $role) {{ $role->name }} @endforeach
+            </td>
             <td>{{ $user->created_at }}</td>
             <td class="text-end">
             <a class="btn text-success" href="{{ route('users.show', $user->id) }}">

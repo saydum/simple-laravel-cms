@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 
 class DashboardController extends Controller
