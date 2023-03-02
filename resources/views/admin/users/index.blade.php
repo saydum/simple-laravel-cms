@@ -7,7 +7,7 @@
         <th scope="col">ID</th>
         <th scope="col">Имя</th>
         <th scope="col">Email</th>
-        <th scope="col">Роли</th>
+        <th scope="col">Роль</th>
         <th scope="col">Дата регистраций</th>
         <th scope="col">Управление</th>
       </tr>
